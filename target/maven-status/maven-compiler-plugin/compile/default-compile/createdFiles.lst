@@ -1,0 +1,5 @@
+com\baja\jirareader\data\JiraUser.class
+com\baja\jirareader\auth\JiraCookieAuth.class
+com\baja\jirareader\auth\JiraAuthStrategy.class
+com\baja\jirareader\Main.class
+com\baja\jirareader\JiraClient.class
