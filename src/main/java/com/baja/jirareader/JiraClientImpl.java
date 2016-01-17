@@ -12,6 +12,10 @@ import com.baja.jirareader.auth.JiraAuthStrategy;
 import com.baja.jirareader.auth.JiraCookieAuth;
 import com.baja.jirareader.data.JiraUser;
 
+/**
+ * JIRA Rest definition : https://docs.atlassian.com/jira/REST/latest/
+ * */
+
 public class JiraClientImpl implements JiraClient{
 	
 	private CloseableHttpClient httpClient;

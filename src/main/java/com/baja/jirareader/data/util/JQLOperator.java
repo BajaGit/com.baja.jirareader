@@ -1,5 +1,13 @@
 package com.baja.jirareader.data.util;
 
+/**
+ * JQL INFO:
+ * https://confluence.atlassian.com/jira/advanced-searching-179442050.html#AdvancedSearching-CHANGED
+ * 
+ * 
+ * 
+ * */
+
 public enum JQLOperator {
 	EQUALS("="), NOT_EQUALS("!="), GREATER_THAN(">"), GREATER_EQUAL(">="),
 	LESS_THAN("<"), LESS_EQUALS("<="), IN(" IN "), NOT_IN(" NOT IN "),

@@ -4,7 +4,7 @@ package com.baja.jirareader.data.util;
  * JQL INFO:
  * https://confluence.atlassian.com/jira/advanced-searching-179442050.html#AdvancedSearching-CHANGED
  * 
- * 
+ * TODO: Seems kinda ugly like that, there is surely a better approach for this
  * 
  * */
 
