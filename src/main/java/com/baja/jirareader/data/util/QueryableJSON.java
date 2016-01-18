@@ -2,12 +2,17 @@ package com.baja.jirareader.data.util;
 
 import java.util.Optional;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+@FunctionalInterface
 public interface QueryableJSON {
 	
 	JSONObject getJSON();
 	
+	default boolean isJSONpresent(){
+		return getJSON() != null;
+	}
 	
 	default boolean write(String path, Object value){
 		Optional<Object> existing= query(path);
@@ -71,6 +76,32 @@ public interface QueryableJSON {
 		
 		return Optional.ofNullable(result);
 	}
+	
+	default Optional<JSONObject> queryObj(String query){
+		Optional<Object> res = query(query);
+		return Optional.ofNullable(res.isPresent() ? (JSONObject) res.get() : null);
+	}
+	
+	default Optional<JSONArray> queryArray(String query){
+		Optional<Object> res = query(query);
+		return Optional.ofNullable(res.isPresent() ? (JSONArray) res.get() : null);
+	}
+
+	default Optional<String> queryString(String query){
+		Optional<Object> res = query(query);
+		return Optional.ofNullable(res.isPresent() ? (String) res.get() : null);
+	}
+	
+	default Optional<Long> queryLong(String query){
+		Optional<Object> res = query(query);
+		return Optional.ofNullable(res.isPresent() ? (Long) res.get() : null);
+	}
+	
+	default Optional<Integer> queryInteger(String query){
+		Optional<Object> res = query(query);
+		return Optional.ofNullable(res.isPresent() ? (Integer) res.get() : null);
+	}
+	
 	
 	default Optional<Object> queryField(String fieldName, JSONObject json){
 		return Optional.ofNullable(json.get(fieldName));

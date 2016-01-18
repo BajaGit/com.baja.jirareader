@@ -41,7 +41,7 @@ public abstract class Connector {
 	
 	public Optional<JSONObject> get(String urlPart, Map<String, String> params){
 		
-		String requestUrl = this.client.getBaseURL() + getAPIPath() + "/" + urlPart;
+		String requestUrl = this.client.getBaseURL() + getAPIPath() + (urlPart == null || urlPart.isEmpty() ? "": "/" + urlPart);
 		
 		if ( params != null){
 			requestUrl+= "?";
